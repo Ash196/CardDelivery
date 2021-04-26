@@ -45,10 +45,9 @@ public class CardDelivery {
         $("[data-test-id=phone] input").setValue("+79944411122");
         $("[data-test-id=agreement]").click();
         $("button.button").click();
-        $(withText("Ошибка!")).shouldBe(Condition.visible, Duration.ofSeconds(15));
         $(".notification__content")
-                .shouldBe(Condition.visible)
-                .shouldHave(Condition.exactText("Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы."));
+                .shouldNotBe(Condition.visible)
+                .shouldNotHave(Condition.exactText("Встреча успешно забронирована на " + dayVisit));
     }
 
     @Test
@@ -62,10 +61,9 @@ public class CardDelivery {
         $("[data-test-id=phone] input").setValue("+79944411122");
         $("[data-test-id=agreement]").click();
         $("button.button").click();
-        $(withText("Ошибка!")).shouldBe(Condition.visible, Duration.ofSeconds(15));
         $(".notification__content")
-                .shouldBe(Condition.visible)
-                .shouldHave(Condition.exactText("Поле обязательно для заполнения."));
+                .shouldNotBe(Condition.visible)
+                .shouldNotHave(Condition.exactText("Встреча успешно забронирована на " + dayVisit));
 
     }
     @Test
@@ -79,10 +77,9 @@ public class CardDelivery {
         $("[data-test-id=phone] input").setValue("");
         $("[data-test-id=agreement]").click();
         $("button.button").click();
-        $(withText("Ошибка!")).shouldBe(Condition.visible, Duration.ofSeconds(15));
         $(".notification__content")
-                .shouldBe(Condition.visible)
-                .shouldHave(Condition.exactText("Поле обязательно для заполнения."));
+                .shouldNotBe(Condition.visible)
+                .shouldNotHave(Condition.exactText("Встреча успешно забронирована на " + dayVisit));
 
     }
     @Test
@@ -96,10 +93,9 @@ public class CardDelivery {
         $("[data-test-id=phone] input").setValue("+79944411122");
         $("[data-test-id=agreement]").click();
         $("button.button").click();
-        $(withText("Ошибка!")).shouldBe(Condition.visible, Duration.ofSeconds(15));
         $(".notification__content")
-                .shouldBe(Condition.visible)
-                .shouldHave(Condition.exactText("Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы."));
+                .shouldNotBe(Condition.visible)
+                .shouldNotHave(Condition.exactText("Встреча успешно забронирована на " + dayVisit));
 
     }
     @Test
@@ -113,10 +109,9 @@ public class CardDelivery {
         $("[data-test-id=phone] input").setValue("+79944411122");
         //$("[data-test-id=agreement]").click();
         $("button.button").click();
-        $(withText("Ошибка!")).shouldBe(Condition.visible, Duration.ofSeconds(15));
         $(".notification__content")
-                .shouldBe(Condition.visible)
-                .shouldHave(Condition.exactText("Я соглашаюсь с условиями обработки и использования моих персональных данных."));
+                .shouldNotBe(Condition.visible)
+                .shouldNotHave(Condition.exactText("Встреча успешно забронирована на " + dayVisit));
 
     }
 
